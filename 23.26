@@ -97,3 +97,97 @@ Benefit:
 
 Ensures only authorized users can make changes to data filters, improving security and control.
 
+Bug Fixes in v23.26
+
+1. Metadata Rollback Issue
+
+Issue:
+
+Users faced an error (gitPromotion.zip file is not a function) when rolling back metadata, which disrupted deployments.
+
+Fix:
+
+This error has been resolved, and rollback functionality now works correctly.
+
+Benefit:
+
+Users can perform metadata rollbacks without issues.
+
+2. Disappearing Test Class Names in Metadata Grid
+
+Issue:
+
+When using the Add Test Classes button, test class names would disappear automatically.
+
+Fix:
+
+Now, test class names remain visible after selection.
+
+Benefit:
+
+Users can successfully add and select test classes without losing them.
+
+3. Compliance Rules Node Selection Issue
+
+Issue:
+
+Users were limited to selecting only one node per metadata type.
+
+Fix:
+
+Now, users can select multiple nodes without needing to reset the selection.
+
+Benefit:
+
+Improved flexibility in selecting metadata nodes, similar to Salesforce Source Format Pipelines.
+
+4. Non-Admin Users Deploying to Production
+
+Issue:
+
+Users with Copado User licenses (not Admins) were able to deploy directly to Production when they should have been restricted to Sandboxes.
+
+Fix:
+
+Now, Copado correctly blocks Production deployments for these users.
+
+Benefit:
+
+Ensures proper access control and compliance with deployment policies.
+
+Known Issue in v23.26 (KI-00967)
+
+Problem:
+
+Some users with Copado User licenses could still deploy to Production under certain conditions.
+
+Current Status:
+
+This issue has been fixed in the current release.
+
+Scenarios Where the Issue Occurred:
+
+If an Admin validated a deployment before moving to Production, a Copado User could later Merge and Deploy to Production.
+
+If an Admin created a deployment but encountered merge conflicts, a Copado User resolving the conflicts could deploy to Production.
+
+Fix:
+
+Copado now fully prevents Copado User-licensed users from deploying to Production.
+
+Conclusion
+
+Copado Deployer v23.26 makes important improvements and fixes. Now, users can:
+
+Deploy metadata more efficiently.
+
+Experience faster performance in deployments.
+
+Select metadata fields without issues.
+
+Perform Data Commits with more control and security.
+
+Avoid deployment errors and unexpected access issues.
+
+A previous issue where non-admin users could deploy to Production has now been resolved. Overall, this update makes deployments easier and more reliable.
+
