@@ -1,0 +1,122 @@
+Key Features
+
+1. Out-of-Sync Pipeline Alerts
+
+New Feature: Copado now provides Out-of-Sync Pipeline Alerts.
+
+What it does: Displays alerts in the User Story record, the Back-Promotion Pipeline Manager page, and the CLI when user stories available for back-promotion meet specific criteria.
+
+Benefit: Helps users decide the best time to back-promote changes by ensuring they are stable, tested, and approved.
+
+Supported Pipelines: This feature works with Salesforce Source Format Pipelines and Salesforce Metadata Pipelines.
+
+Availability: This feature is available from v23.35 of the Copado Deployer package.
+
+2. Setup Instructions for Cloned Pages
+
+If your organization is using cloned Pipeline or User Story Lightning Record Pages, you must manually update them to enable Out-of-Sync Alerts.
+
+For Pipeline Lightning Record Page:
+
+Go to Setup > Object Manager > Pipeline.
+
+Select Lightning Record Pages and edit your cloned Pipeline page.
+
+Add a new Out-Of-Sync-Settings tab.
+
+Drag the outOfSyncAlerts component into this tab.
+
+Save the page.
+
+For User Story Lightning Record Page:
+
+Go to Setup > Object Manager > User Story.
+
+Select Lightning Record Pages and edit your cloned User Story page.
+
+Drag the userStoryBackPromoteNotification component under the Visualforce component.
+
+Save and activate the page.
+
+Prerequisites
+
+To use the Out-of-Sync Pipeline Alerts feature, ensure the following requirements are met:
+
+Copado Deployer package v23.35 must be installed.
+
+Permissions:
+
+Create/Edit access to system properties is required to create and modify the out-of-sync alerts criteria from the Pipeline record.
+
+Read access is required to visualize alerts.
+
+Create/Edit access is provided by the Copado Functions Admin permission set.
+
+Read access is provided by the Copado User and Copado Functions User permission sets.
+
+Defining Criteria
+
+Criteria for Out-of-Sync Pipeline Alerts are defined in the Out-of-Sync Settings tab of the Pipeline record. These criteria consist of two main sections:
+
+Environments: Specifies the environments the user stories must reach to be included in the alerts.
+
+Conditions: Specifies the conditions the user stories must meet to trigger the alert.
+
+Example Criteria Configurations:
+
+Flag environments as out of sync when any user story reaches Staging:
+
+Add Staging to the Environments section without any conditions.
+
+Flag environments as out of sync when a user story has the status 'Approved', regardless of the environment:
+
+Add Status = Approved in the Conditions section and leave Environments empty.
+
+Flag environments as out of sync when a user story reaches Staging and has an 'Approved' status:
+
+Add Staging in Environments AND Status = Approved in Conditions.
+
+Flag Staging or Production as out of sync when user stories are Approved or Completed:
+
+Add Staging and Production to Environments.
+
+Add Status = Approved AND Project =  in Conditions.
+
+Notification Display
+
+After defining the criteria, notifications will appear in the following places:
+
+Back-Promotion page in the Pipeline Manager: When clicking the back-promote arrow, a banner will appear next to the destination environment if any user stories meet the criteria. These user stories will be highlighted.
+
+User Story Record: A message will be displayed under the user story path when the environment is out of sync based on the defined criteria. (This does not apply to previous or next environments in the path.)
+
+CLI: When using the sf copado:work:set command, a message will appear if the source environment is out of sync.
+
+Considerations
+
+A default criteria with Environments = Production (or last pipeline environment) will be created when a user with system property access:
+
+Opens any user story.
+
+Navigates to the Back-Promotion page in the Pipeline Manager.
+
+Opens the Out-of-Sync Settings tab in the Pipeline record.
+
+Runs the sf copado:work:set command for the first time after installing/upgrading to v23.35.
+
+The default criteria can be modified from the Out-of-Sync Settings tab in the Pipeline record.
+
+Comma-separated values are not supported when defining criteria.
+
+Example: Status = Approved,Completed will look for a status of Approved,Completed (single string), not Approved OR Completed.
+
+The only way to define multiple values for the same field is with the NOT EQUAL operator.
+
+Example:
+
+Condition 1: Status NOT EQUAL Cancelled
+
+Condition 2: Status NOT EQUAL Pending
+
+Condition 3: Status NOT EQUAL Blocked
+
