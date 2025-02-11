@@ -1,0 +1,62 @@
+**Copado Deployer v23.35 - Simple Explanation**
+
+### **Overview**
+Copado Deployer v23.35 introduces a new feature called Out-of-Sync Alerts, along with improvements to Promotion record buttons and bug fixes. Below is a simple explanation of the key updates.
+
+---
+
+### **Key Features**
+#### **1. Out-of-Sync Pipeline Alerts**
+- **New Feature:** Copado now provides Out-of-Sync Pipeline Alerts.
+- **What it does:** It shows alerts in the User Story record, the Back-Promotion Pipeline Manager page, and the CLI when user stories available for back-promotion meet specific criteria.
+- **Benefit:** Helps users decide the best time to back-promote changes.
+
+#### **2. Setup Instructions for Cloned Pages**
+If your org is using cloned Pipeline or User Story Lightning Record Pages, you must manually update them to enable Out-of-Sync Alerts.
+
+- **For Pipeline Lightning Record Page:**
+  1. Go to **Setup > Object Manager > Pipeline**.
+  2. Select **Lightning Record Pages** and edit your cloned Pipeline page.
+  3. Add a new **Out-Of-Sync-Settings** tab.
+  4. Drag the **outOfSyncAlerts** component into this tab.
+  5. Save the page.
+
+- **For User Story Lightning Record Page:**
+  1. Go to **Setup > Object Manager > User Story**.
+  2. Select **Lightning Record Pages** and edit your cloned User Story page.
+  3. Drag the **userStoryBackPromoteNotification** component under the Visualforce component.
+  4. Save and activate the page.
+
+---
+
+### **Bug Fixes in v23.35**
+#### **1. Automated Forward Promotions Issue (KI-00994)**
+- **Issue:** Forward promotions were unintentionally created when modifying a back-promotion schedule.
+- **Fix:** Now, forward promotions only trigger when users actively select *Ready to Promote*.
+- **Benefit:** Prevents unintended promotions and ensures user control over promotion actions.
+
+#### **2. Restricting Production Deployments for Non-Admin Users (KI-00999)**
+- **Issue:** Non-Copado Admin users were able to deploy to Production.
+- **Fix:** Now, only Copado Admin users can deploy to Production.
+- **Benefit:** Ensures that production deployments are restricted to authorized users only.
+
+---
+
+### **Known Issues in v23.35**
+#### **1. KI-00994 - Automated Forward Promotions Issue**
+- **Problem:** Forward promotions were being created automatically when back-promotion schedules were modified.
+- **Status:** Fixed in this release.
+- **Impact:** 3 users.
+- **Workaround:** No longer needed as the issue is resolved.
+
+#### **2. KI-00999 - Copado User License Production Deployment Issue**
+- **Problem:** A Copado User-licensed user could still deploy to production under certain conditions.
+- **Status:** Fixed in this release.
+- **Impact:** 1 user.
+- **Workaround:** No longer needed as the issue is resolved.
+
+---
+
+### **Conclusion**
+Copado Deployer v23.35 brings an important new feature (Out-of-Sync Alerts) to improve deployment awareness. It also fixes key issues related to unintended forward promotions and production deployment restrictions. Users should update their cloned record pages to take full advantage of the new alert feature.
+
