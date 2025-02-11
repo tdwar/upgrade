@@ -160,6 +160,48 @@ Summary of Key Takeaways
 🔹 New UI components need to be manually added for cloned record pages.
 🔹 Promotion record buttons are optimized to improve resource efficiency and system performance.
 
+Bug Fixes
+
+1. Persona Management - User Addition Fix (KI-00997)
+
+Issue:
+
+When an organization had more than 50,000 active users, attempting to add users via Persona Management caused an error.
+
+Users were unable to select and assign personas effectively.
+
+Fix:
+
+The Add Users page now displays up to 2,000 active users.
+
+Users can utilize the search field to find and add users beyond this limit.
+
+Search results will include only active users who have not yet been assigned a persona.
+
+Benefit:
+
+Ensures smoother persona management in large organizations.
+
+Allows admins to add users without errors.
+
+2. Merge Conflict Review Fix for Non-Admin Users (KI-00998)
+
+Issue:
+
+Non-admin users encountered a query limit error when clicking the Review Merge Conflicts button in the promotion record.
+
+This prevented them from accessing and resolving merge conflicts.
+
+Fix:
+
+The issue has been resolved, allowing non-admin users to review merge conflicts without encountering query limit errors.
+
+Benefit:
+
+Enhances user accessibility.
+
+Ensures smooth conflict resolution for all users, not just admins.
+
 For more details, refer to Copado's official documentation or reach out to the Copado support team.
 
 End of Document
