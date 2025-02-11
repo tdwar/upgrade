@@ -1,0 +1,81 @@
+**Copado Deployer v23.41.1 - Simple Explanation**
+
+---
+
+### **Overview**
+Copado Deployer v23.41.1 brings updates to **Persona Management**, **Help Text Improvements**, and **Bug Fixes**. These updates aim to enhance user permissions, improve help text clarity, and resolve issues with automated forward promotions.
+
+---
+
+### **Key Updates**
+
+#### **1. Persona Management Update**
+- The **Release Manager** standard persona now includes the **Execute Automations** permission.
+- This means Release Managers can now run automations without needing additional permissions.
+
+##### **How to Apply This Update in Your Org**
+Follow these steps to update the persona settings:
+1. **Deactivate the Validation Rule**
+   - Go to **Setup > Object Manager**.
+   - Select **Persona (copado__Persona_Definition__c)**.
+   - Click **Validation Rules**.
+   - Find **Restrict_Standard_Persona_Modification**, click **Edit**, and uncheck **Active**.
+   - Click **Save**.
+2. **Update Persona Management**
+   - Go to the **Persona Management** tab.
+   - Click **Update Standard Persona**.
+
+#### **2. Help Text Updates**
+- Copado has updated help texts for better clarity.
+- You need to manually update these fields in your org.
+
+##### **How to Update Help Texts**
+1. Go to **Setup > Object Manager**.
+2. Select the object that contains the field needing updates.
+3. Click **Fields & Relationships**.
+4. Find the field, click **Edit**, update the **Help Text**, and click **Save**.
+
+##### **Fields Requiring Updates**
+| Field Name       | Object           | Updated Help Text |
+|-----------------|----------------|--------------------|
+| Cron Expression | Automation Rule | Enter a cron expression to schedule the frequency of this job. Certain cron expressions may not be supported by Salesforce. |
+| Cron Expression | Git Snapshot    | Enter a cron expression to schedule the frequency of this job. Certain cron expressions may not be supported by Salesforce. |
+
+---
+
+### **Bug Fixes**
+#### **Issue: Automated Forward Promotions in Metadata Pipelines (KI-01008)**
+- **Problem:** Forward promotions were not progressing as expected beyond the first environment.
+- **Fix:** Automated promotions now work properly across all configured environments.
+- **Impact:** Users with automated pipelines will now see correct deployments.
+
+##### **Issue Details**
+- Previously, if a pipeline was set to auto-promote across multiple environments, it stopped after the first promotion.
+- Now, the system correctly promotes user stories through all environments as configured.
+
+##### **Example of the Fixed Issue**
+If a pipeline is configured as:
+**Dev1 → INT → UAT → Prod** (with auto-promotion enabled),
+- Before: Promotion would stop after **Dev1 → INT**.
+- Now: Promotion will correctly proceed from **Dev1 → INT → UAT → Prod**.
+
+##### **Steps to Reproduce the Issue (Before Fix)**
+1. Configure automated forward promotions across multiple environments.
+2. Create and commit a user story.
+3. Click **Submit**.
+4. Previously, only the first promotion happened; no further promotions occurred.
+
+##### **Workaround (No Longer Needed)**
+- Before this fix, users had to manually promote user stories after the first deployment.
+- Now, this issue is resolved, and manual intervention is no longer required.
+
+---
+
+### **Conclusion**
+Copado Deployer v23.41.1 improves **persona management**, makes **help text more informative**, and **fixes a major bug with automated promotions**. To fully benefit from this update, make sure to:
+- **Update standard personas** as per the instructions.
+- **Manually update help texts** where needed.
+- **Enjoy seamless automated forward promotions** without manual intervention.
+
+For any issues, reach out to Copado support for further assistance!
+
