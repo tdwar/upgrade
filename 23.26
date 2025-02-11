@@ -60,3 +60,40 @@ Copado Deployer v23.26 makes important improvements and fixes. Now, users can:
 
 A known issue with cloning User Story pages still exists, but a fix is in progress. Overall, this update makes deployments easier and more reliable.
 
+
+Metadata Pipeline Updates
+
+1. Data Commit Access for Copado User-Licensed Users
+
+Before:
+
+Only Copado Admin users could perform Data Commits.
+
+Now:
+
+Copado User-licensed users can also perform Data Commits in user stories using the Metadata format pipeline.
+
+Benefit:
+
+More users can now commit data without needing admin access.
+
+2. Restricting Filter Modifications in Data Commit
+
+Before:
+
+Any user could modify filters in Data Commit.
+
+Now:
+
+Users need a special permission called Edit Filter Data Template Task (API Name: Edit_Filter_Data_Template_Task) to add or modify filters.
+
+If a user doesn’t have permission:
+
+A banner will appear notifying them about the missing permission.
+
+Filters will be shown in read-only mode.
+
+Benefit:
+
+Ensures only authorized users can make changes to data filters, improving security and control.
+
