@@ -60,3 +60,106 @@ If your org is using cloned Pipeline or User Story Lightning Record Pages, you m
 ### **Conclusion**
 Copado Deployer v23.35 brings an important new feature (Out-of-Sync Alerts) to improve deployment awareness. It also fixes key issues related to unintended forward promotions and production deployment restrictions. Users should update their cloned record pages to take full advantage of the new alert feature.
 
+Copado Source Format Pipelines v23.35 - Release Analysis
+
+Overview
+
+This release introduces key enhancements aimed at improving user awareness and optimizing system performance. The major updates include:
+
+Out-of-Sync Pipeline Alerts: Intelligent notifications to assist in back-promotion decisions.
+
+Promotion Record Button Enhancements: Improved efficiency in key deployment actions.
+
+1. Out-of-Sync Pipeline Alerts
+
+What is this feature?
+
+The Out-of-Sync Pipeline Alerts feature provides notifications to help users make better back-promotion decisions.
+
+Alerts are displayed in:
+
+User Story record page
+
+Back-Promotion Pipeline Manager page
+
+Copado CLI
+
+These alerts appear when user stories meet the predefined out-of-sync criteria.
+
+Benefits
+
+✅ Better decision-making: Users are informed when a back-promotion may cause inconsistencies.
+✅ Increased awareness: Alerts highlight when changes in user stories need attention before back-promotion.
+✅ Enhanced workflow: Reduces manual tracking and minimizes errors.
+
+Upgrade Instructions (For users with cloned Lightning record pages)
+
+If you are using cloned Pipeline or User Story Lightning Record Pages, follow these steps to enable Out-of-Sync Pipeline Alerts:
+
+Pipeline Lightning Record Page
+
+Navigate to Setup > Object Manager and select Pipeline.
+
+Select Lightning Record Pages from the left menu.
+
+Select your cloned Pipeline record page and click Edit.
+
+Locate the non-Salesforce Tab component.
+
+Click New Tab and configure:
+
+Tab Label: Custom
+
+Custom Label: Out-Of-Sync-Settings
+
+Select the newly created tab.
+
+Under the Components tab, search for outOfSyncAlerts and drag it into the new tab.
+
+Repeat steps for the Salesforce Tab component.
+
+Click Save.
+
+User Story Lightning Record Page
+
+Navigate to Setup > Object Manager and select User Story.
+
+Select Lightning Record Pages from the left menu.
+
+Select your cloned User Story record page and click Edit.
+
+Under the Components tab, search for userStoryBackPromoteNotification.
+
+Drag it under the Visualforce component.
+
+Click Save and Activate the record page.
+
+2. Promotion Record Buttons Enhancements
+
+What has changed?
+
+Copado has optimized three key buttons in the Promotion record:
+
+Merge Changes
+
+Deploy Changes
+
+Merge & Deploy
+
+These buttons no longer consume Salesforce platform event delivery limits.
+
+Benefits
+
+✅ Better resource management: Reduces consumption of Salesforce event delivery limits.
+✅ Cost optimization: Helps organizations stay within platform event quotas.
+✅ Improved performance: Streamlined execution of key deployment actions.
+
+Summary of Key Takeaways
+
+🔹 Out-of-Sync Pipeline Alerts provide improved awareness for back-promotion decisions.
+🔹 New UI components need to be manually added for cloned record pages.
+🔹 Promotion record buttons are optimized to improve resource efficiency and system performance.
+
+For more details, refer to Copado's official documentation or reach out to the Copado support team.
+
+End of Document
