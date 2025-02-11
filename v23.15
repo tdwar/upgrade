@@ -1,0 +1,121 @@
+**Copado Deployer v23.15 Release Notes Analysis**
+
+### **Overview**
+Copado Deployer v23.15 focuses on resolving key issues faced in previous versions. The primary updates include bug fixes related to the User Story lightning record page, the Feature field in Field Sets, and the PMD Quality Gate. Below is a simplified breakdown of these updates for better understanding.
+
+---
+
+### **Bug Fixes in v23.15**
+
+#### **1. Issue with Cloning User Story Lightning Record Page** (KI-00972)
+- **Problem:**
+  - Users faced errors when trying to clone the User Story lightning record page after upgrading to v23.5.
+  - Error messages included:
+    - "The cloned page may have invalid component configurations due to protected custom labels."
+    - "The component ‘Dynamic Related List - Single’ is invalid."
+- **Fix:**
+  - This issue has been resolved in v23.15, and users can now successfully clone the User Story lightning record page without errors.
+- **Impact:**
+  - Previously affected users can now edit and save cloned pages without additional troubleshooting.
+
+---
+
+#### **2. Feature Field Not Available in Field Sets** (KI-00975)
+- **Problem:**
+  - The "Feature" field on the User Story object was missing from Field Sets, preventing users from adding it to the User Story back promotion page.
+- **Fix:**
+  - The "Feature" field is now available for selection in Field Sets.
+- **Impact:**
+  - Users can now customize Field Sets to include the "Feature" field as needed.
+
+---
+
+#### **3. PMD Quality Gate Issue in Source Format Pipeline** (KI-00965)
+- **Problem:**
+  - PMD (a tool for checking code quality) did not function correctly as a Quality Gate during User Story promotion.
+  - The deployment process failed with the error: "No test records of the specified test tool type were found or they are not marked as Ready to Run."
+  - However, individual tests ran successfully from the Tests Tab.
+- **Fix:**
+  - PMD test records are now correctly created during Promotion Deployment.
+  - Quality Gate results now display as expected.
+- **Impact:**
+  - Users relying on PMD for code quality checks can now successfully run it as part of their pipeline.
+
+---
+
+### **Conclusion**
+Copado Deployer v23.15 mainly resolves issues that were limiting user functionality in previous versions. With fixes to the User Story lightning record page cloning, the availability of the "Feature" field in Field Sets, and PMD test execution in the Quality Gate, users should experience smoother operations in these areas.
+
+This update is particularly beneficial for teams using User Story records, customizing Field Sets, and running code quality checks via PMD in their deployment pipelines.
+
+
+Copado Deployer v23.15 - Simple Explanation
+
+Overview
+
+Copado Deployer v23.15 fixes some important problems from the previous version. These fixes make it easier for users to work with User Stories, add fields, and run code quality checks. Below is a simple explanation of what has been fixed.
+
+Bug Fixes in v23.15
+
+1. Problem with Cloning User Story Page (KI-00972)
+
+Issue:
+
+Users could not copy (clone) the User Story page after updating to v23.5.
+
+Errors appeared about invalid settings and missing components.
+
+Fix:
+
+Now, users can successfully copy the User Story page without any issues.
+
+Benefit:
+
+Users can edit and save copied pages without extra steps.
+
+2. Feature Field Was Missing in Field Sets (KI-00975)
+
+Issue:
+
+The "Feature" field was not available in Field Sets, so users couldn’t add it to the User Story promotion page.
+
+Fix:
+
+The "Feature" field is now available for selection.
+
+Benefit:
+
+Users can add this field wherever needed.
+
+3. PMD Quality Check Was Not Working (KI-00965)
+
+Issue:
+
+The PMD tool (which checks code quality) was not running properly during User Story promotion.
+
+Deployments failed with an error saying no test records were found.
+
+However, tests worked fine when run separately.
+
+Fix:
+
+Now, PMD runs correctly as part of the deployment process.
+
+Benefit:
+
+Users can successfully check their code quality without issues.
+
+Conclusion
+
+Copado Deployer v23.15 fixes these three major issues. Now, users can:
+
+Copy User Story pages without errors.
+
+Use the "Feature" field in Field Sets.
+
+Run PMD code checks properly.
+
+These fixes help teams work smoothly and avoid unnecessary errors in their process.
+
+
+
