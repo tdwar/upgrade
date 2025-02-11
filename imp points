@@ -1,0 +1,82 @@
+**# Copado Upgrade Summary: v23.15 to v24**
+
+This document highlights key improvements, necessary upgrade steps, and new features introduced in **Copado Deployer versions v23.15, v23.26, v23.35, v23.41.1, and v24**. Follow these steps to ensure a smooth upgrade process for **both Metadata and Source Format Pipelines**.
+
+---
+## **1. Key Features & Enhancements by Version**
+
+### **v23.15 - Enhancements & Fixes**
+- **Metadata & Source Format Pipelines:**
+  - Improved error handling for promotions in CI/CD pipelines.
+  - Fixed permission issues causing failures in pipeline deployments.
+- **Actions Required:**
+  - Validate user permissions for promotion records.
+  - Test pipeline deployments post-upgrade to ensure no breaking changes.
+
+### **v23.26 - Security & Performance Improvements**
+- **Metadata & Source Format Pipelines:**
+  - Enhanced permission controls in Deployment Records.
+  - Optimized API calls for improved pipeline execution speed.
+  - Security enhancements to prevent unauthorized access to credentials.
+- **Actions Required:**
+  - Review and update sharing settings for Deployment Records.
+  - Verify API limits and optimize execution times in pipelines.
+
+### **v23.35 - Out-of-Sync Pipeline Alerts & UI Enhancements**
+- **New Feature: Out-of-Sync Pipeline Alerts** (Source Format Pipelines)
+  - Alerts appear in the **User Story record**, **Back-Promotion Pipeline Manager**, and **CLI** when user stories meet back-promotion criteria.
+- **UI Changes for Lightning Record Pages:**
+  - **Pipeline Lightning Record Page:** Add the **Out-Of-Sync Settings** tab.
+  - **User Story Lightning Record Page:** Add **userStoryBackPromoteNotification** component.
+- **Promotion Record Buttons Update:**
+  - **Merge Changes, Deploy Changes, Merge & Deploy** buttons optimized to reduce Salesforce platform event consumption.
+- **Actions Required:**
+  - Update Lightning Record Pages as per instructions.
+  - Validate the functionality of Out-of-Sync alerts post-upgrade.
+  - Test pipeline execution to confirm event optimization.
+
+### **v23.41.1 - Bug Fixes & Performance Enhancements**
+- **Metadata & Source Format Pipelines:**
+  - Fixed Persona Management error when adding users in orgs with **50,000+ users**.
+  - Resolved **query limit error** for non-admin users in Promotion Records.
+  - Performance optimization in Merge Conflict resolution.
+- **Actions Required:**
+  - Verify Persona Management functionality with large user sets.
+  - Test non-admin access to the **Review Merge Conflicts** button.
+  - Validate Merge Conflict resolution performance post-upgrade.
+
+### **v24 - Major Enhancements & Upgrade Steps**
+- **Source Format Pipeline Enhancements:**
+  - Optimized **Merge & Deploy** operations to improve execution efficiency.
+  - Enhanced CLI commands for better automation control.
+- **Metadata Pipeline Updates:**
+  - Improved version control handling for large metadata deployments.
+  - Additional support for complex dependency resolution.
+- **Security & Sharing Settings:**
+  - Mandatory **Credential Sharing set to Private** (Required for upgrade).
+- **Actions Required:**
+  - **Update credential sharing settings to Private** before upgrading.
+  - **Test all Merge & Deploy operations** to confirm improved performance.
+  - Validate CLI automation post-upgrade.
+  - Perform dependency resolution testing for large deployments.
+
+---
+## **2. Final Steps to Perform Before & After Upgrade**
+### **Pre-Upgrade Checks**
+1. **Review Release Notes & Known Issues:** Ensure compatibility with your org’s configurations.
+2. **Backup Your Current Configuration:** Export metadata and pipeline configurations.
+3. **Set Credential Sharing to Private:** Required from v22.14 onwards.
+4. **Ensure Compliance with All Pre-Installation Steps:** Follow sequential upgrade steps.
+
+### **Post-Upgrade Validation**
+1. **Verify Lightning Record Page Updates:** Ensure all components (like Out-of-Sync alerts) are correctly placed.
+2. **Test Pipeline Execution:** Check for issues in merge, deployment, and back-promotion.
+3. **Confirm Security Settings:** Validate user access and permission changes.
+4. **Monitor Performance Metrics:** Evaluate API consumption and execution times for optimizations.
+
+---
+## **Conclusion**
+By following this structured upgrade approach, you can ensure a seamless transition to **Copado v24** with all the latest features and performance improvements while avoiding potential deployment issues.
+
+🚀 **Ensure thorough testing post-upgrade and validate all new features before rolling them out to production!**
+
