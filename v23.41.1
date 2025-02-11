@@ -79,3 +79,57 @@ Copado Deployer v23.41.1 improves **persona management**, makes **help text more
 
 For any issues, reach out to Copado support for further assistance!
 
+Bug Fixes in v23.41.1
+
+1. Salesforce Metadata Pipelines - Automated Forward Promotions Issue (KI-01008)
+
+Issue: Automated forward promotions only worked until the next environment, instead of continuing through all stages.
+
+Fix: Promotions now progress correctly through all environments as per the pipeline configuration.
+
+Impact: 3 users.
+
+Workaround: Previously, users had to manually submit/promote the user story again. Now, the issue is resolved.
+
+2. Salesforce Source Format Pipelines - Deployment Restriction
+
+Issue: Users with Copado User licenses were able to submit and deploy from the promotion record to production.
+
+Fix: These users can no longer submit and deploy to production.
+
+Benefit: Ensures that only authorized users can deploy to production environments.
+
+3. Overlap Awareness - Pull Request Button Fix
+
+Issue: The Pull Request button in Overlap Awareness showed an error and failed to redirect for Git providers like AWS Code Commit.
+
+Fix: The button now correctly navigates to the configured base URL.
+
+4. Pipeline Manager - Created Date Sorting Issue (KI-00992)
+
+Issue: The Created Date field in the Pipeline Manager was sorting alphabetically instead of by actual date.
+
+Fix: Users can now sort user stories by Created Date correctly to identify the oldest entries.
+
+Known Issues in v23.41.1
+
+KI-01008 - Automated Forward Promotions Issue
+
+Problem: Forward promotions only worked up to one environment.
+
+Status: Fixed in this release.
+
+Impact: 3 users.
+
+Workaround: Previously, users had to manually trigger the next promotion, but this is now resolved.
+
+KI-00992 - Created Date Sorting Issue
+
+Problem: Created Date was sorted alphabetically instead of chronologically.
+
+Status: Fixed in this release.
+
+Impact: Users relying on Created Date sorting.
+
+Workaround: No longer needed as sorting now works correctly.
+
