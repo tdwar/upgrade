@@ -1,0 +1,62 @@
+**Copado Deployer v23.26 - Simple Explanation**
+
+### **Overview**
+Copado Deployer v23.26 includes new improvements, fixes for past issues, and updates to the Metadata Pipeline. Below is a simple explanation of the key updates.
+
+---
+
+### **Metadata Pipeline Updates**
+- **What’s New?**
+  - The Metadata Pipeline now has improved tracking and management of metadata.
+  - Helps teams handle deployments more easily.
+  - More automation for better efficiency.
+- **Benefit:**
+  - Users can manage metadata changes with fewer errors and less manual work.
+
+---
+
+### **Bug Fixes in v23.26**
+#### **1. Deployment Fixes**
+- **Issue:**
+  - Some users had errors when deploying User Stories due to missing metadata components.
+- **Fix:**
+  - Now, deployments work correctly without missing parts.
+- **Benefit:**
+  - Users can deploy changes smoothly.
+
+#### **2. Performance Improvements**
+- **Issue:**
+  - Some processes were slow, making deployments take longer than expected.
+- **Fix:**
+  - Speed improvements have been made to handle deployments faster.
+- **Benefit:**
+  - Users save time and get better performance.
+
+#### **3. Metadata Selection Issue**
+- **Issue:**
+  - Some metadata fields were not visible when selecting items for deployment.
+- **Fix:**
+  - Now, all necessary metadata fields are visible and selectable.
+- **Benefit:**
+  - Users can ensure that all required metadata is included in their deployments.
+
+---
+
+### **Known Issue in v23.26** (KI-00967)
+- **Problem:**
+  - Some users may experience errors when cloning User Story pages.
+- **Current Status:**
+  - The issue is known, and a fix is expected in a future release.
+- **Workaround:**
+  - Users can manually adjust the cloned page settings to avoid errors.
+
+---
+
+### **Conclusion**
+Copado Deployer v23.26 makes important improvements and fixes. Now, users can:
+1. Deploy metadata more efficiently.
+2. Experience faster performance in deployments.
+3. Select metadata fields without issues.
+
+A known issue with cloning User Story pages still exists, but a fix is in progress. Overall, this update makes deployments easier and more reliable.
+
