@@ -1,0 +1,70 @@
+# Copado Upgrade Guide: v23.12 to v24
+
+## Overview
+Copado releases regular updates to improve features and performance. Since your current version is **v23.12**, and you are upgrading to **v24**, you must follow all pre-installation steps and upgrade instructions between these versions. This guide provides a structured approach to ensure a smooth upgrade.
+
+## Pre-Installation Steps
+Before installing Copado v24, you need to perform the following steps:
+
+### **1. Out-of-Sync Pipeline Alerts (From v23.35)**
+If you have **cloned** Pipeline or User Story lightning record pages, manually update them:
+
+#### **Pipeline Lightning Record Page**
+1. Navigate to **Setup > Object Manager** and select **Pipeline**.
+2. Click **Lightning Record Pages** from the left menu.
+3. Select your cloned Pipeline record page and click **Edit**.
+4. Select the **non-Salesforce Tab component**, click **New Tab**, and configure:
+   - **Tab Label:** Custom
+   - **Custom Label:** Out-Of-Sync-Settings
+5. Select the newly created tab.
+6. Search for **outOfSyncAlerts** in the **Components tab** and drag it under the new **Out-Of-Sync Settings** tab.
+7. Repeat for the **Salesforce Tab component**.
+8. Click **Save**.
+
+#### **User Story Lightning Record Page**
+1. Navigate to **Setup > Object Manager** and select **User Story**.
+2. Click **Lightning Record Pages** from the left menu.
+3. Select your cloned User Story record page and click **Edit**.
+4. Search for **userStoryBackPromoteNotification** under **Components tab**.
+5. Drag it under the **Visualforce component**.
+6. Click **Save** and **Activate the record page**.
+
+### **2. Promotion Record Button Optimization**
+
+- Copado improved the **Merge Changes, Deploy Changes, and Merge & Deploy** buttons.
+- These changes optimize platform event usage and prevent unnecessary consumption of event delivery limits.
+- No manual action is required, but be aware of this improvement.
+
+### **3. Bug Fixes to Consider**
+
+- **Persona Management Fix:**
+  - Previously, when adding users in **Persona Management**, errors occurred if an org had **over 50,000 active users**.
+  - The **Add Users** page now displays up to **2,000 active users**, with a **search option** for additional users.
+
+- **Review Merge Conflicts Fix:**
+  - Non-admin users will no longer experience a **query limit error** when clicking the **Review Merge Conflicts** button.
+
+### **4. Credential Object Sharing Settings (From v22.14)**
+- Ensure **Credential object's Org-Wide Sharing setting is set to Private** before installation.
+- If previously set to **Public Read/Write**, change it back to **Private** under **Setup > Sharing Settings**.
+
+## Upgrade Steps
+Once all **pre-installation steps** are completed:
+
+1. Download and install **Copado v24** from the official Copado repository.
+2. Verify all pipeline alerts and record pages have been updated as per the pre-installation steps.
+3. Review **Copado Release Notes** for additional upgrade instructions.
+4. Conduct a **sanity check** by:
+   - Validating all pipelines.
+   - Checking promotion processes.
+   - Ensuring Credential settings remain private.
+
+## Post-Upgrade Validation
+- **Confirm Out-of-Sync Alerts are functional.**
+- **Ensure no errors occur in pipeline promotions.**
+- **Test the new button optimizations for merging and deploying changes.**
+- **Verify that Credential sharing remains Private.**
+
+## Conclusion
+By following these steps, your Copado upgrade from **v23.12 to v24** will be seamless, ensuring new features and optimizations are fully functional in your environment.
+
