@@ -1,0 +1,164 @@
+Copado Deployer v24 - Release Analysis
+
+Key Highlights
+
+Copado Deployer v24 introduces significant improvements in quality gates, user story back-promotion order, pipeline record updates, and bug fixes. The enhancements aim to streamline deployment processes, improve user experience, and ensure consistency.
+
+1. Improved Order of User Stories in Back Promotions
+
+What’s new?
+
+User stories will now be back-promoted in the same order as they were forward-promoted.
+
+Ensures better consistency and predictability in deployments.
+
+This change applies to Salesforce Source Format Pipelines v6.0 and later.
+
+Changes in UI:
+
+The Order User Stories by field on the Promotion record will no longer be used for back promotions.
+
+If using a custom Promotion record layout, the field should be hidden using Lightning App Builder.
+
+Steps to Hide Field:
+
+Navigate to Setup > Lightning App Builder.
+
+Edit the Promotion Record Page.
+
+Find the copado__Order_by__c field component.
+
+Add a visibility rule: Visible only when {!Record.copado__Back_Promotion__c} = false.
+
+Save and activate the page if needed.
+
+2. Quality Tools & Quality Gates Enhancements
+
+Field permissions for the Test field in the Scheduled Jobs object are now included in the Copado User permission set.
+
+If using a cloned Copado User permission set, permissions must be assigned manually.
+
+Steps to Assign Permissions:
+
+Navigate to Setup > Permission Sets.
+
+Select the cloned Copado User permission set.
+
+Go to Object Settings > Scheduled Jobs.
+
+Click Edit, provide Read & Edit permissions, and save.
+
+New Quality Gate UI
+
+Simplified, more efficient configuration experience.
+
+Includes tool-specific guidance for supported tools (e.g., PMD, CRT, Apex).
+
+To use the new experience, install Quality Tools v3.0 and Source Format Pipelines v6.0.
+
+Custom test tools must be updated for compatibility.
+
+Upgrade Instructions for Custom Pages & Permissions:
+
+Update Quality Gate Rule lightning record page.
+
+Update Pipeline lightning record page.
+
+Assign permissions for the new Is Updated Data Model field in the Quality Gate Rule object.
+
+Add new Apex classes to cloned permission sets.
+
+3. Copado Services Documentation
+
+New documentation is now available for:
+
+Persona Domain: Manages credentials and users linked to personas.
+
+User Story Domain: Handles all user story operations.
+
+4. Pipeline UI Enhancements
+
+Rearranged buttons in Pipeline record header for better accessibility.
+
+If using a cloned Pipeline lightning record page, manual updates are needed.
+
+Steps to Update Pipeline UI:
+
+Navigate to Setup > Object Manager > Pipeline.
+
+Click Lightning Record Pages > Edit Cloned Pipeline Record Page.
+
+Arrange buttons in the following order:
+
+Edit
+
+Manage Releases
+
+Pipeline Builder
+
+Initialize
+
+Setup Continuous Delivery
+
+Execute Completed Stories
+
+Find & Replace Rule Editor
+
+Performance Optimizations
+
+Manage Environment Variables
+
+Select Main Branch
+
+Manage Regression Tests
+
+Clone with Environments
+
+Clone
+
+Delete
+
+Add New Filters for Specific Buttons:
+
+Manage Releases: Only visible when Platform = Salesforce.
+
+Pipeline Builder, Initialize, Setup Continuous Delivery, Performance Optimization: Only visible when Platform ≠ Salesforce.
+
+Manage Environment Variables, Setup Regression Tests: Only visible when Platform = Salesforce.
+
+5. Bug Fixes
+
+Salesforce Metadata Pipelines
+
+Fixed an error “Method is not visible: void copado.RunJob.Request.()” when running job templates from Apex.
+
+Issue Resolved: The Request class is now accessible (KI-01013).
+
+Salesforce Source Format Pipelines
+
+Replaced Platform Event Subscriptions with a Polling Mechanism.
+
+Eliminates event subscription limits.
+
+Prevents transition errors from Metadata Pipelines to Source Format Pipelines (KI-01018).
+
+Conclusion
+
+Back Promotions: Now follow forward-promotion order, ensuring accuracy.
+
+Quality Tools & Gates: Simplified UI and required manual updates for custom permission sets.
+
+Pipeline Enhancements: Better button arrangement for ease of access.
+
+Bug Fixes: Addressed critical pipeline and Apex execution issues.
+
+Action Required:
+
+Install Quality Tools v3.0 and Source Format Pipelines v6.0 for new quality gate UI.
+
+Update custom Quality Gate Rule and Pipeline lightning pages if using cloned versions.
+
+Assign permissions for new fields if using cloned permission sets.
+
+These improvements ensure a more efficient, predictable, and seamless deployment process for Copado users.
+
